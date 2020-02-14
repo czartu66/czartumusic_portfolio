@@ -12,7 +12,7 @@
 
 	// Breakpoints.
 		breakpoints({
-			large:   [ '981px',  '1680px' ],
+			large:   [ '981px',  '2000px' ],
 			medium:  [ '737px',  '980px'  ],
 			small:   [ '481px',  '736px'  ],
 			xsmall:  [ null,     '480px'  ]
@@ -112,7 +112,7 @@
 			}
 
 		// Scrollex.
-			breakpoints.on('>small', function() {
+			breakpoints.on('<large', function() {
 				$header.scrollex({
 					terminate: function() {
 
@@ -133,7 +133,7 @@
 				});
 			});
 
-			breakpoints.on('<=small', function() {
+			breakpoints.on('<=large', function() {
 
 				$header.unscrollex();
 
@@ -154,7 +154,7 @@
 			// Create bg and append it to body.
 				$bg = $('<div class="main-bg" id="' + $this.attr('id') + '-bg"></div>')
 					.css('background-image', (
-						'url("assets/css/images/overlay.png"), url("' + $primaryImg.attr('src') + '")'
+						'url("static/assets/css/images/overlay.png"), url("' + $primaryImg.attr('src') + '")'
 					))
 					.appendTo($body);
 
